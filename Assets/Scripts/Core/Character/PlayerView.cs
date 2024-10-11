@@ -67,25 +67,12 @@ namespace Core.Character
 
         private void FixedUpdate()
         {
-            //rigidbody2D.velocity = movement * speed;
-            /*if (rigidbody2D.velocity.magnitude > 0.1f)
-            {
-                PlayerEvent.PlayerMoveEvent?.Invoke(new PlayerMoveEvent(gameObject.transform.position, this));
-            }*/
-
             Debug.Log(playerSO._mouseClickPosition.normalized);
-            rigidbody2D.velocity = Vector2.MoveTowards(rigidbody2D.position, playerSO._mouseClickPosition, speed * Time.fixedDeltaTime);
+            rigidbody2D.position = Vector2.MoveTowards(rigidbody2D.position, playerSO._mouseClickPosition, speed * Time.fixedDeltaTime);
             if (rigidbody2D.velocity.magnitude > 0.1f)
             {
                 PlayerEvent.PlayerMoveEvent?.Invoke(new PlayerMoveEvent(gameObject.transform.position, this));
             }
-
-            /*rigidbody2D.position =
-                Vector2.MoveTowards(rigidbody2D.position, playerSO._mouseClickPosition, speed * Time.fixedDeltaTime);
-            if (rigidbody2D.velocity.magnitude > 0.1f)
-            {
-                PlayerEvent.PlayerMoveEvent?.Invoke(new PlayerMoveEvent(gameObject.transform.position, this));
-            }*/
         }
 
         #endregion
