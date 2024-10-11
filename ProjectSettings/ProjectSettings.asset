@@ -162,7 +162,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.EdenV.Beaver_POCT
-    Standalone: com.SMUGuildhall.Team13
+    Standalone: com.EdenV.Beaver-POCT
   buildNumber:
     Standalone: 0
     VisionOS: 0

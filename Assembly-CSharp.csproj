@@ -46,12 +46,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Carlotta_Enemies\Controller_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Event\CubeEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Character\Handler\PlayerInputHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateCoveredEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\PlateView.cs" />
     <Compile Include="Assets\Scripts\Core\Character\Events\PlayerMoveEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateTriggeredEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Handler\CubePlayerInteraction.cs" />
-    <Compile Include="Assets\Scripts\Core\Cube\Event\OnCubeMoveEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Handler\PlateTriggeredHandler.cs" />
     <Compile Include="Assets\Scripts\Carlotta_Enemies\View_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Handler\PlateCoveredHandler.cs" />
     <Compile Include="Assets\Scripts\Core\Character\PlayerSO.cs" />
     <Compile Include="Assets\Scripts\Core\Character\PlayerView.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Event\CubeInteractEvent.cs" />
@@ -59,10 +64,10 @@
     <Compile Include="Assets\Scripts\Core\Cube\Event\CubeMoveEvent.cs" />
     <Compile Include="Assets\Scripts\Interaction\ObjectInteraction.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Handler\CubeMoveHandler.cs" />
-    <Compile Include="Assets\Scripts\Core\Cube\Event\OnCubeIntereactEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Character\PlayerEvent.cs" />
     <Compile Include="Assets\Scripts\Interaction\ObjectInteractStep.cs" />
     <Compile Include="Assets\Scripts\Carlotta_Enemies\Model_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Core\Cube\Handler\CubeInteractHandler.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Handler\CubePressurePlatesInteract.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

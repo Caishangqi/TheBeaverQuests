@@ -7,10 +7,19 @@ using UnityEngine;
 public struct CubeInteractEvent
 {
     public GameObject cube;
-    private bool hasCovered;
-    private BoxCollider2D m_cubeCollider;
-    private BoxCollider2D m_plateCollider;
+    //public bool hasCovered;
+    //private BoxCollider2D m_cubeCollider;
+    //private BoxCollider2D m_plateCollider;
 
-    //private float m_PositionThreshold;
-    //private float m_SizeThreshold;
+    // public CubeInteractEvent(GameObject cube, bool hasCovered)
+    // {
+    //     this.cube = cube;
+    //     this.hasCovered = hasCovered;
+    //     m_cubeCollider = cube.GetComponent<BoxCollider2D>();
+    //     //m_plateCollider = plate.GetComponent<BoxCollider2D>();
+    // }
+    public CubeInteractEvent(GameObject cube)
+    {
+        this.cube = cube;
+    }
 }
