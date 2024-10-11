@@ -2,17 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class View_Enemy : MonoBehaviour
+public class EnemyView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator animator;
+
+    private Renderer enemyRenderer;
+
+    private void Awake()
     {
-        
+        enemyRenderer = GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdatePosition(Vector3 position)
     {
-        
+        transform.position = position;
+    }
+
+    public void PlayAnimation(string animationName)
+    {
+        if (animator != null)
+        {
+            animator.Play(animationName);
+        }
+    }
+
+    public void SetColor(Color color)
+    {
+        if (enemyRenderer != null)
+        {
+            enemyRenderer.material.color = color;
+        }
+    }
+
+    public void MarkAsDead()
+    {
+        PlayAnimation("Dead");// You can also add visual effects, disable the enemy, etc.
     }
 }
