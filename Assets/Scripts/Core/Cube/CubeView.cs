@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Core.Cube.Handler;
 using UnityEngine;
 
 public class CubeView : MonoBehaviour
@@ -11,12 +12,14 @@ public class CubeView : MonoBehaviour
     // Start is called before the first frame update
     public CubeMoveHandler CubeMoveHandler;
     public CubeInteractHandler CubeInteractHandler;
+    public PlayerNearbyHandler PlayerNearbyHandler;
     
     private Vector2 cubePosition;
     public void Start()
     {
         CubeMoveHandler = new CubeMoveHandler(this);
         CubeInteractHandler = new CubeInteractHandler(this);
+        PlayerNearbyHandler = new PlayerNearbyHandler(this);
     }
 
     // Update is called once per frame
