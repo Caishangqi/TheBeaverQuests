@@ -6,11 +6,11 @@ using UnityEngine;
 public class CubeMoveHandler
 {
     //public CubeMoveEvent CubeMoveEvent;
-    public CubeView CubeView;
+    public CubeView cubeView;
 
     public CubeMoveHandler(CubeView CubeView)
     {
-        this.CubeView = CubeView;
+        this.cubeView = cubeView;
         CubeEvent.CubeMoveEvent += OnCubeMoveEvent;
         
     }
@@ -21,7 +21,7 @@ public class CubeMoveHandler
         cubeMoveEvent.position += cubeMoveEvent.velocity * Time.deltaTime;
 
         // 将计算出的新位置应用到Cube的Transform组件中
-        CubeView.transform.position = cubeMoveEvent.position;
+        cubeView.transform.position = cubeMoveEvent.position;
         Debug.Log(cubeMoveEvent.position.x + " " + cubeMoveEvent.position.y);
     }
 

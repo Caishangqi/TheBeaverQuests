@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CubeView : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rigidbody2D;
-    [SerializeField] BoxCollider2D cubeCollider;
+    public Rigidbody2D rigidbody2D;
+    public BoxCollider2D cubeCollider;
     [SerializeField] SpriteRenderer spriteRenderer;
     
     // Start is called before the first frame update
