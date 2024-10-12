@@ -2,44 +2,80 @@ using System;
 using Core.Character.Events;
 using Core.Character.Handler;
 using UnityEngine;
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 namespace Core.Character
 {
     public class PlayerView : MonoBehaviour
     {
-        [SerializeField] private float speed = 5;
+        #region PlayerView
 
-        [SerializeField] PlayerInputHandler playerInputHandler;
+        [SerializeField] public float speed = 5;
 
-        [SerializeField] SpriteRenderer spriteRenderer;
 
-        [SerializeField] Rigidbody2D rigidbody2D;
+        #region Handler
 
-        [SerializeField] BoxCollider2D playerCollider;
+        [SerializeField] public PlayerInputHandler playerInputHandler;
+        [SerializeField] public PlayerActionHandler playerActionHandler;
 
-        private Vector2 movement;
+        #endregion
+
+
+        [SerializeField] public SpriteRenderer spriteRenderer;
+
+        [SerializeField] public Rigidbody2D rigidbody2D;
+
+        [SerializeField] public BoxCollider2D playerCollider;
+
+        [SerializeField] public PlayerSo playerData { get; set; }
+
+        private Vector2 targetPosition;
+        private bool isMoving;
 
         // Start is called before the first frame update
         public void Start()
         {
             playerInputHandler = new PlayerInputHandler(this);
+            playerActionHandler = new PlayerActionHandler(this);
+            playerData = new PlayerSo();
+            targetPosition = transform.position;
+            isMoving = false;
         }
 
         // Update is called once per frame
         private void Update()
         {
-            movement.x = Input.GetAxis("Horizontal") * speed;
-            movement.y = Input.GetAxis("Vertical") * speed;
+            if (Input.GetMouseButtonDown(0)) // 0表示鼠标左键
+            {
+                Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                targetPosition = new Vector2(mouseWorldPosition.x, mouseWorldPosition.y);
+                isMoving = true;
+            }
         }
 
         private void FixedUpdate()
         {
-            
-            rigidbody2D.velocity = movement * speed;
-            if (rigidbody2D.velocity.magnitude > 0.1f)
+            if (isMoving)
             {
-                PlayerEvent.PlayerMoveEvent?.Invoke(new PlayerMoveEvent(gameObject.transform.position, this));
+                Vector2 currentPosition = rigidbody2D.position;
+                Vector2 direction = (targetPosition - currentPosition).normalized;
+                Vector2 newPosition = currentPosition + direction * speed * Time.fixedDeltaTime;
+
+                // 当距离足够近时停止移动
+                if (Vector2.Distance(newPosition, targetPosition) < 0.1f)
+                {
+                    newPosition = targetPosition;
+                    isMoving = false;
+                }
+
+                rigidbody2D.MovePosition(newPosition);
+
+                if (rigidbody2D.velocity.magnitude > 0.1f || isMoving)
+                {
+                    PlayerEvent.PlayerMoveEvent?.Invoke(new PlayerMoveEvent(newPosition, this));
+                }
             }
         }
     }
+
+    #endregion
 }
