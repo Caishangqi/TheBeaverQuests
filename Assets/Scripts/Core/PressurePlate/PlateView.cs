@@ -12,7 +12,7 @@ public class PlateView : MonoBehaviour
     
     private BoxCollider2D m_plateCollider;  // 压力板的碰撞器
     private BoxCollider2D m_cubeCollider;   // 检测Cube的碰撞器
-    private BoxCollider2D m_playerCollider;
+    private BoxCollider2D m_playerCollider; //player重量
     private bool isCovered = false;         // 记录是否被覆盖
     
     public void Start()
