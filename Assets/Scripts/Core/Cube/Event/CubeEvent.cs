@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,8 @@ using UnityEngine.Events;
 
 public static class CubeEvent 
 {
-    public static UnityAction<CubeMoveEvent> CubeMoveEvent;
+    public static Action<CubeMoveEvent> CubeMoveEvent;
     
-    public static UnityAction<CubeInteractEvent> CubeInteractEvent;
+    public static Action<CubeInteractEvent> CubeInteractEvent;
     
 }

@@ -10,7 +10,7 @@ public class CubeInteractHandler
     public CubeInteractHandler(CubeView CubeView)
     {
         this.CubeView = CubeView;
-        //
+        //还需要订阅player的interact事件
         CubeEvent.CubeInteractEvent += OnCubeInteractEvent;
     }
 
