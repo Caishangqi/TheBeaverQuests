@@ -2,7 +2,7 @@
 
 namespace Core.UI.Event
 {
-    public class PauseEvent
+    public class PauseUIDisplayEvent
     {
         
     }

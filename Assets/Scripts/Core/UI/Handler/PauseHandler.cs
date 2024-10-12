@@ -13,7 +13,7 @@ namespace Core.UI.Handler
             UIEvent.PauseEvent += OnPauseEvent;
         }
 
-        private void OnPauseEvent(PauseEvent pauseEvent)
+        private void OnPauseEvent(PauseUIDisplayEvent pauseUIDisplayEvent)
         {
             //函数实现
         }
