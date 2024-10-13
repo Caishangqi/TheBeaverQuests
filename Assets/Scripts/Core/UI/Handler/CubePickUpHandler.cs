@@ -1,29 +1,26 @@
-﻿using UnityEngine;
+﻿using Core.Cube.Event;
+using UnityEngine;
 
 namespace Core.UI.Handler
 {
     public class CubePickUpHandler
     {
-        public UIView uiView;
+        public UIView   UIView;
         
-        public CubePickUpHandler(UIView uiView)
+        public CubePickUpHandler(UIView UIView)
         {
-            this.UIView =  uiView;
-            PlateEvent.PlateTriggeredEvent += OnPlateTriggeredEvent;
+            this.UIView = UIView;
+            CubeEvent.PlayerNearbyEvent += OnPlayerNearbyEvent;
         }
 
-        public UIView UIView { get; set; }
-
-        //处理trigger事件
-        private void OnPlateTriggeredEvent(PlateTriggeredEvent PlateTriggeredEvent)
+        private void OnPlayerNearbyEvent(PlayerNearbyEvent playerNearbyEvent)
         {
-            Debug.Log($"{PlateTriggeredEvent:instigator.name} has triggered the pressure plate.");
-            // 在这里实现业务逻辑，例如打开门或激活机关
+            
         }
 
         ~CubePickUpHandler()
         {
-            PlateEvent.PlateTriggeredEvent -= OnPlateTriggeredEvent;
+            CubeEvent.PlayerNearbyEvent -= OnPlayerNearbyEvent;
         }
         //订阅player对箱子的交互事件
     }
