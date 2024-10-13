@@ -3,6 +3,7 @@ using System.Linq;
 using Core.Character.Events;
 using Core.Character.Handler;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
 namespace Core.Character
@@ -43,7 +44,7 @@ namespace Core.Character
             playerInputHandler = new PlayerInputHandler(this);
             playerActionHandler = new PlayerActionHandler(this);
             PlayerInteractHandler = new PlayerInteractHandler(this);
-            
+
             playerData = new PlayerSo();
             targetPosition = transform.position;
             isMoving = false;
@@ -54,10 +55,18 @@ namespace Core.Character
         {
             if (Input.GetMouseButtonDown(0)) // 0表示鼠标左键
             {
+                // 检测鼠标是否点击在 UI 上
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    // 如果鼠标在 UI 上，不执行移动操作
+                    return;
+                }
+
                 Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 targetPosition = new Vector2(mouseWorldPosition.x, mouseWorldPosition.y);
                 isMoving = true;
             }
+
             PlayerInteractHandler.DetectInteractable();
         }
 
@@ -84,8 +93,8 @@ namespace Core.Character
                 }
             }
         }
-        
-        
+
+
         // 可视化交互半径
         private void OnDrawGizmosSelected()
         {
