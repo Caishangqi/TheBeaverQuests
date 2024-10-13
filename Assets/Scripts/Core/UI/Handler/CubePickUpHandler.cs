@@ -1,4 +1,5 @@
 ﻿using Core.Cube.Event;
+using Core.UI.Event;
 using UnityEngine;
 
 namespace Core.UI.Handler
@@ -11,9 +12,15 @@ namespace Core.UI.Handler
         {
             this.UIView = UIView;
             CubeEvent.PlayerNearbyEvent += OnPlayerNearbyEvent;
+            UIEvent.PressCubeInteractWidgetEvent += OnPressCubeInteractWidgetEvent;
         }
 
         private void OnPlayerNearbyEvent(PlayerNearbyEvent playerNearbyEvent)
+        {
+            
+        }
+
+        private void OnPressCubeInteractWidgetEvent(PressCubeInteractWidgetEvent pressCubeInteractWidgetEvent)
         {
             
         }

@@ -1,4 +1,6 @@
 ﻿using System;
+using Core.UI.Event;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 namespace Core.UI
@@ -11,5 +13,8 @@ namespace Core.UI
         {
             Time.timeScale = 0;
         }
+        
+        //检测到触发这个事件 跳出按钮的sprite
+        //UIEvent.PressCubeInteractWidgetEvent?.Invoke(new PressCubeInteractWidgetEvent(other.gameObject));
     }
 }
