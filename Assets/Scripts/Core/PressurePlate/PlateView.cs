@@ -9,7 +9,7 @@ public class PlateView : MonoBehaviour
     [SerializeField] private BoxCollider2D plateCollider;    // 压力板的碰撞器
     [SerializeField] private float m_PositionThreshold = 0.2f;  // 位置差异阈值
     [SerializeField] private float m_SizeThreshold = 0.2f;      // 尺寸差异阈值
-    [SerializeField] private int plateId;  // 每个Plate的唯一ID
+    [SerializeField] private int plateId = 1;  // 每个Plate的唯一ID
     
     private BoxCollider2D m_plateCollider;  // 压力板的碰撞器
     private BoxCollider2D m_cubeCollider;   // 检测Cube的碰撞器
