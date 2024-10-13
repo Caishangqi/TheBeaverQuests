@@ -1,7 +1,9 @@
 using System;
+using System.Linq;
 using Core.Character.Events;
 using Core.Character.Handler;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.Character
 {
@@ -10,12 +12,14 @@ namespace Core.Character
         #region PlayerView
 
         [SerializeField] public float speed = 5;
-
+        [SerializeField] public float interactionRadius = 3f; // 交互范围半径
+        [SerializeField] public LayerMask interactableLayerMask; // 可交互物品的图层
 
         #region Handler
 
         [SerializeField] public PlayerInputHandler playerInputHandler;
         [SerializeField] public PlayerActionHandler playerActionHandler;
+        [SerializeField] public PlayerInteractHandler PlayerInteractHandler;
 
         #endregion
 
@@ -31,11 +35,15 @@ namespace Core.Character
         private Vector2 targetPosition;
         private bool isMoving;
 
+        [SerializeField] public InteractableView currentHighlightedInteractableView;
+
         // Start is called before the first frame update
         public void Start()
         {
             playerInputHandler = new PlayerInputHandler(this);
             playerActionHandler = new PlayerActionHandler(this);
+            PlayerInteractHandler = new PlayerInteractHandler(this);
+            
             playerData = new PlayerSo();
             targetPosition = transform.position;
             isMoving = false;
@@ -50,6 +58,7 @@ namespace Core.Character
                 targetPosition = new Vector2(mouseWorldPosition.x, mouseWorldPosition.y);
                 isMoving = true;
             }
+            PlayerInteractHandler.DetectInteractable();
         }
 
         private void FixedUpdate()
@@ -74,6 +83,14 @@ namespace Core.Character
                     PlayerEvent.PlayerMoveEvent?.Invoke(new PlayerMoveEvent(newPosition, this));
                 }
             }
+        }
+        
+        
+        // 可视化交互半径
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, interactionRadius);
         }
     }
 
