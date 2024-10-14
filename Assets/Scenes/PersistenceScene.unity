@@ -179,7 +179,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 107683697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1a1c2ef6810ee4db9b76255f8e5196, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c928f00fbf142b47841e89d3a443fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1884204813}
@@ -210,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 144401416}
   - component: {fileID: 144401417}
+  - component: {fileID: 144401418}
   m_Layer: 0
   m_Name: Pause&ResumeManager
   m_TagString: Untagged
@@ -244,6 +245,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5361054d0064fea44a55cefa18d7334b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &144401418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144401414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af477d822a005d49bd076097f9e86ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   pauseButton: {fileID: 230444379}
   resumeButton: {fileID: 826409421}
   pauseArea: {fileID: 230444378}
@@ -253,22 +266,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.0016899109
-      value: 0.9974365
-      inSlope: -0.027325623
-      outSlope: -0.027325623
+      time: 0.0017873524
+      value: 0.99765015
+      inSlope: 0.18854451
+      outSlope: 0.18854451
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.07364971
+      outWeight: 0.06363659
     - serializedVersion: 3
-      time: 0.997731
-      value: 0.49689597
-      inSlope: -0.023371585
-      outSlope: -0.023371585
+      time: 0.9892578
+      value: -0.009433746
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.3027823
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -277,17 +290,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.004910452
-      value: 0.99765015
-      inSlope: 0.06596144
-      outSlope: 0.06596144
+      time: 0.0035705566
+      value: 0.9952698
+      inSlope: -0.021675851
+      outSlope: -0.021675851
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.21797366
+      outWeight: 0.08734806
     - serializedVersion: 3
-      time: 0.9885254
-      value: -0.002357483
+      time: 0.9946289
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
