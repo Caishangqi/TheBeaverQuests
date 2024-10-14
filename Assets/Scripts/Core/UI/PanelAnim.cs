@@ -11,7 +11,15 @@ public class PanelAnim : MonoBehaviour
 
     public void ShowPanel()
     {
-        StartCoroutine(ShowPanel(panel));
+        if(panel != null)
+        {
+            Debug.Log("Starting ShowPanel Coroutine");
+            StartCoroutine(ShowPanel(panel));
+        }
+        else
+        {
+            Debug.LogError("Panel is not assigned in PanelAnim script");
+        }
     }
 
     public void HidePanel()
