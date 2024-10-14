@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.Character.Events;
 using Core.Character.Handler;
@@ -55,12 +56,7 @@ namespace Core.Character
         {
             if (Input.GetMouseButtonDown(0)) // 0表示鼠标左键
             {
-                // 检测鼠标是否点击在 UI 上
-                if (EventSystem.current.IsPointerOverGameObject())
-                {
-                    // 如果鼠标在 UI 上，不执行移动操作
-                    return;
-                }
+                //IsPointerOverUIElement();
 
                 Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 targetPosition = new Vector2(mouseWorldPosition.x, mouseWorldPosition.y);
@@ -68,6 +64,21 @@ namespace Core.Character
             }
 
             PlayerInteractHandler.DetectInteractable();
+        }
+
+        private bool IsPointerOverUIElement()
+        {
+            PointerEventData eventData = new PointerEventData(EventSystem.current)
+            {
+                position = Input.mousePosition
+            };
+            List<RaycastResult> raycastResults = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, raycastResults);
+
+            Debug.Log(raycastResults.Count);
+            Debug.Log(raycastResults);
+
+            return raycastResults.Count > 0;
         }
 
         private void FixedUpdate()
