@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core.Character;
+using Core.UI.Event;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class CubeInteractUI : MonoBehaviour
 {
         //public GameObject buttonPrefab; // 预制的按钮对象
          public Canvas canvas; // UI的Canvas，确保按钮生成在UI中
-         public Vector2 offset = new Vector2(500, 0); // 按钮相对于高亮物体的偏移量
+         public Vector2 offset = new Vector2(150, 0); // 按钮相对于高亮物体的偏移量
          
          private InteractableView currentInteractable; // 当前被高亮的物体
          private RectTransform buttonRectTransform; // 用于保存按钮的RectTransform
@@ -36,7 +37,8 @@ public class CubeInteractUI : MonoBehaviour
                 // 检查鼠标点击是否在按钮区域内
                 if (buttonRectTransform != null && RectTransformUtility.RectangleContainsScreenPoint(buttonRectTransform, mousePosition, Camera.main))
                 {
-                    OnButtonClick(currentInteractable); // 手动调用点击逻辑
+                    //OnButtonClick(currentInteractable); // 手动调用点击逻辑
+                    UIEvent.GeneratedButtonClickedEvent?.Invoke(new GeneratedButtonClickedEvent(currentInteractable));
                 }
             }
         }
