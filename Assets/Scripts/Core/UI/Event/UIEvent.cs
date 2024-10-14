@@ -9,5 +9,6 @@ namespace Core.UI.Event
         public static Action<CubePutDownEvent> CubePutDownEvent;
         public static Action<PauseUIDisplayEvent> PauseEvent;
         public static Action<PressCubeInteractWidgetEvent> PressCubeInteractWidgetEvent;
+        public static Action<GeneratedButtonClickedEvent> GeneratedButtonClickedEvent;
     }
 }
