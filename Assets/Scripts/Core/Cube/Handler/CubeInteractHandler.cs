@@ -1,28 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-public class CubeInteractHandler
+namespace Core.Cube.Handler
 {
-    public CubeView CubeView;
-
-    public CubeInteractHandler(CubeView CubeView)
+    public class CubeInteractHandler
     {
-        this.CubeView = CubeView;
-        //还需要订阅player的interact事件
-        CubeEvent.CubeInteractEvent += OnCubeInteractEvent;
-    }
+        public CubeView CubeView;
 
-    public void OnCubeInteractEvent(CubeInteractEvent CubeInteractEvent)
-    {
+        public CubeInteractHandler(CubeView CubeView)
+        {
+            this.CubeView = CubeView;
+            //还需要订阅player的interact事件
+            CubeEvent.CubeInteractEvent += OnCubeInteractEvent;
+        }
 
-        //Debug.Log(CubeInteractEvent.hasCovered + " " + CubeInteractEvent.cube);
-        Debug.Log( CubeInteractEvent.cube);
-    }
+        public void OnCubeInteractEvent(CubeInteractEvent CubeInteractEvent)
+        {
+            //Debug.Log(CubeInteractEvent.hasCovered + " " + CubeInteractEvent.cube);
+            Debug.Log(CubeInteractEvent.cube);
+        }
 
-    ~CubeInteractHandler()
-    {
-        CubeEvent.CubeInteractEvent -= OnCubeInteractEvent;
+        public void OnDestroy()
+        {
+            CubeEvent.CubeInteractEvent -= OnCubeInteractEvent;
+        }
     }
 }

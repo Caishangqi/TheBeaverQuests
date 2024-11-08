@@ -12,7 +12,6 @@ public class CubeMoveHandler
     {
         this.cubeView = cubeView;
         CubeEvent.CubeMoveEvent += OnCubeMoveEvent;
-        
     }
 
     public void OnCubeMoveEvent(CubeMoveEvent cubeMoveEvent)
@@ -22,10 +21,10 @@ public class CubeMoveHandler
 
         // 将计算出的新位置应用到Cube的Transform组件中
         cubeView.transform.position = cubeMoveEvent.position;
-        Debug.Log(cubeMoveEvent.position.x + " " + cubeMoveEvent.position.y);
+        //Debug.Log(cubeMoveEvent.position.x + " " + cubeMoveEvent.position.y);
     }
 
-    ~CubeMoveHandler()
+    public void OnDestroy()
     {
         CubeEvent.CubeMoveEvent -= OnCubeMoveEvent;
     }

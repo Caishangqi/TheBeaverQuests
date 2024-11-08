@@ -12,7 +12,7 @@ namespace Core.Character
         private Color originalColor;
         private Color highlightColor = Color.yellow;
         
-        private CubeInteractUI interactUI; // 引用Manager
+        private CubeInteractUIView _interactUIView; // 引用Manager
 
         private void Awake()
         {
@@ -24,7 +24,7 @@ namespace Core.Character
             originalColor = spriteRenderer.color;
             
             // 找到场景中的InteractableManager
-            interactUI = FindObjectOfType<CubeInteractUI>();
+            _interactUIView = FindObjectOfType<CubeInteractUIView>();
         }
 
         // 高亮物品
@@ -33,7 +33,7 @@ namespace Core.Character
             spriteRenderer.color = highlightColor;
             
             // 通知Manager该物体被高亮
-            interactUI.SetCurrentInteractable(this);
+            _interactUIView.SetCurrentInteractable(this);
         }
 
         // 移除高亮
@@ -41,7 +41,7 @@ namespace Core.Character
         {
             spriteRenderer.color = originalColor;
             // 通知Manager移除按钮
-            interactUI.RemoveButtonForInteractable(this);
+            _interactUIView.RemoveButtonForInteractable(this);
         }
     }
 }

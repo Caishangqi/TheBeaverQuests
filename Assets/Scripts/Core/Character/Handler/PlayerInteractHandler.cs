@@ -1,5 +1,9 @@
 using System.Linq;
 using Core.Character.Events;
+using Core.Game.PostProcessManager;
+using Core.Game.PostProcessManager.Events;
+using Core.UI.InteractButtonWidget;
+using Core.UI.InteractButtonWidget.Event;
 using UnityEngine;
 
 namespace Core.Character.Handler
@@ -33,14 +37,22 @@ namespace Core.Character.Handler
             {
                 // 如果有这个交互高亮组件
                 InteractableView interactable = closestCollider.GetComponent<InteractableView>();
-                if (interactable != PlayerView.currentHighlightedInteractableView) // 如果最近的哪个高亮组件不是现在这个
+                if (interactable != PlayerView.currentHighlightedInteractableView)
                 {
                     RemoveCurrentHighlight(); // 把现在这个取消高亮
-                    PlayerView.currentHighlightedInteractableView = interactable; // 设置PlayerView中的需要高亮的组件为新的最近的
-                    PlayerView.currentHighlightedInteractableView.Highlight(); // 把新的高亮了
+                    PlayerView.currentHighlightedInteractableView = interactable;
+                    PostProcessEvent.GameObjectHighlightEvent.Invoke(
+                        new GameObjectHighlightEvent(PlayerView.currentHighlightedInteractableView.gameObject));
 
                     PlayerEvent.PlayerSelectInteractEvent?.Invoke(new PlayerSelectInteractEvent(PlayerView,
                         PlayerView.currentHighlightedInteractableView.gameObject));
+                    // We only want the InteractButtonAppear when player do not have carrier object
+                    if (PlayerView.playerData.carriedObj == null)
+                    {
+                        InteractButtonEvent.InteractButtonRequestEvent?.Invoke(new InteractButtonRequestEvent(
+                            interactable.gameObject
+                        ));
+                    }
                 }
             }
         }
@@ -52,9 +64,18 @@ namespace Core.Character.Handler
                 PlayerEvent.PlayerDeselectInteractEvent?.Invoke(new PlayerDeselectInteractEvent(PlayerView,
                     PlayerView.currentHighlightedInteractableView.gameObject));
 
-                PlayerView.currentHighlightedInteractableView.RemoveHighlight();
+                PostProcessEvent.GameObjectUnHighlightEvent.Invoke(
+                    new GameObjectUnHighlightEvent(PlayerView.currentHighlightedInteractableView.gameObject));
+
+                InteractButtonEvent.InteractButtonUnRequestEvent?.Invoke(
+                    new InteractButtonUnRequestEvent(PlayerView.gameObject));
                 PlayerView.currentHighlightedInteractableView = null;
             }
+        }
+
+        public void OnDestroy()
+        {
+            return;
         }
     }
 }

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 83d695e793344f9ab4f457f8bf497010
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cubeMarkerPrefab: {fileID: 7642621289605144610, guid: 0d17a468b7eec5a4880a8b3e39062c5c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

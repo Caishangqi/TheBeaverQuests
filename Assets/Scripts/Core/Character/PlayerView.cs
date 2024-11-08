@@ -1,69 +1,245 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using Core.AStarManager;
+using Core.AStarManager.Events;
 using Core.Character.Events;
 using Core.Character.Handler;
+using Core.Game.SceneManager;
+using Core.Game.SceneManager.Events;
+using Core.Game.TileMapManager.CubePlaceSelection;
+using Core.Game.TileMapManager.CubePlaceSelection.Events;
+using Core.UI.Event;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 namespace Core.Character
 {
-    public class PlayerView : MonoBehaviour
+    public class PlayerView : MonoBehaviour, IPointerClickHandler
     {
         #region PlayerView
 
         [SerializeField] public float speed = 5;
         [SerializeField] public float interactionRadius = 3f; // 交互范围半径
         [SerializeField] public LayerMask interactableLayerMask; // 可交互物品的图层
+        [SerializeField] public Animator animator;
 
         #region Handler
 
         [SerializeField] public PlayerInputHandler playerInputHandler;
         [SerializeField] public PlayerActionHandler playerActionHandler;
-        [SerializeField] public PlayerInteractHandler PlayerInteractHandler;
+        [SerializeField] public PlayerInteractHandler playerInteractHandler;
+        [SerializeField] public PlayerAnimationHandler playerAnimationHandler;
+        //[SerializeField] public PlayerCollectHandler playerCollectHandler;
 
         #endregion
 
+        #region Variables
+
+        private List<Node> path = new List<Node>();
+        public Vector2 targetPosition;
+        public bool isMoving;
+        [SerializeField] public InteractableView currentHighlightedInteractableView;
+
+        public float doubleTapThreshold = 0.5f; // 双击之间的最大间隔时间
+        private float lastTapTime = 0f;
+        private int tapCount = 0;
+        private GameObject detectArea;
+
+        #endregion
+
+
+        #region Components
 
         [SerializeField] public SpriteRenderer spriteRenderer;
 
         [SerializeField] public Rigidbody2D rigidbody2D;
 
-        [SerializeField] public BoxCollider2D playerCollider;
+        [SerializeField] public CircleCollider2D playerCollider;
+
+        [SerializeField] public GameObject hand; //手部
+
+        #endregion
 
         [SerializeField] public PlayerSo playerData { get; set; }
 
-        private Vector2 targetPosition;
-        private bool isMoving;
-
-        [SerializeField] public InteractableView currentHighlightedInteractableView;
 
         // Start is called before the first frame update
         public void Start()
         {
             playerInputHandler = new PlayerInputHandler(this);
             playerActionHandler = new PlayerActionHandler(this);
-            PlayerInteractHandler = new PlayerInteractHandler(this);
+            playerInteractHandler = new PlayerInteractHandler(this);
+            playerAnimationHandler = new PlayerAnimationHandler(this);
+            //playerCollectHandler = new PlayerCollectHandler(this);
+            SceneEvent.SceneUnLoadCompleteEvent += OnSceneUnLoadCompleteEvent;
+            SceneEvent.SceneLoadCompleteEvent += OnSceneLoadCompleteEvent;
 
             playerData = new PlayerSo();
             targetPosition = transform.position;
             isMoving = false;
+
+            //gameObject.SetActive(false);
+        }
+
+        private void OnSceneLoadCompleteEvent(SceneLoadCompleteEvent sceneLoadCompleteEvent)
+        {
+            //gameObject.SetActive(true);
+        }
+
+        private void OnSceneUnLoadCompleteEvent(SceneUnLoadCompleteEvent sceneUnLoadCompleteEvent)
+        {
+            // Destroy player hand cube object
+            Destroy(playerData.carriedObj);
+            //gameObject.SetActive(false);
         }
 
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0)) // 0表示鼠标左键
+            // Debug Code
+            if (Input.GetKeyUp(KeyCode.R))
             {
-                //IsPointerOverUIElement();
-
-                Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                targetPosition = new Vector2(mouseWorldPosition.x, mouseWorldPosition.y);
-                isMoving = true;
+                playerActionHandler.RequestCubePlaceSelectionUI();
             }
 
-            PlayerInteractHandler.DetectInteractable();
+            // 检测触摸或鼠标输入
+            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+            {
+                // 判断是否是在 UI 上
+                if (EventSystem.current != null)
+                {
+                    if (Input.touchCount > 0)
+                    {
+                        // Magical code, change when you learn all touchphase
+                        // =============================================================================================
+                        Touch touch = Input.GetTouch(0);
+                        if (touch.phase == TouchPhase.Began)
+                        {
+                            // 如果有触摸操作，检查第一个触点是否在 UI 上
+                            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                            {
+                                return; // 在 UI 上，直接返回
+                            }
+                            else
+                            {
+                                PlayerEvent.PlayerUnClickGameObject.Invoke(new PlayerUnClickGameObject(this));
+                            }
+                        }
+                        // =============================================================================================
+                    }
+                    else if (Input.GetMouseButtonDown(0))
+                    {
+                        // 如果是鼠标操作，检查鼠标是否在 UI 上
+                        if (EventSystem.current.IsPointerOverGameObject())
+                        {
+                            return; // 在 UI 上，直接返回
+                        }
+                    }
+                }
+
+                if (Input.touchCount > 0)
+                {
+                    Touch touch = Input.GetTouch(0);
+
+                    // 仅当触摸开始或结束时处理逻辑
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                        Collider2D hitCollider = Physics2D.OverlapPoint(touchPosition);
+
+                        if (hitCollider != null && hitCollider.gameObject == gameObject)
+                        {
+                            CubePlaceSelectionEvent.RequestCubePlaceSelectionUIEvent.Invoke(
+                                new RequestCubePlaceSelectionUIEvent(this));
+                            return;
+                        }
+
+                        // 获取世界坐标位置
+                        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                        targetPosition = new Vector2(worldPosition.x, worldPosition.y);
+
+                        // 调用路径请求事件
+                        AStarEvents.PathRequestEvent?.Invoke(new PathRequestEvent(
+                            transform.position,
+                            targetPosition,
+                            foundedPath =>
+                            {
+                                if (foundedPath != null && foundedPath.Count > 0)
+                                {
+                                    this.path = foundedPath;
+                                    isMoving = true;
+                                    UIEvent.MovingCheckerOKEvent?.Invoke(new MovingCheckerOKEvent(targetPosition));
+                                    Debug.Log("Path generated. Path length: " + foundedPath.Count);
+                                }
+                                else
+                                {
+                                    UIEvent.MovingCheckerNOTEvent?.Invoke(new MovingCheckerNOTEvent(targetPosition));
+                                    Debug.LogWarning("No valid path generated.");
+                                }
+                            }
+                        ));
+                    }
+                }
+                else if (Input.GetMouseButtonDown(0))
+                {
+                    // 获取世界坐标位置
+                    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    targetPosition = new Vector2(worldPosition.x, worldPosition.y);
+
+                    // 调用路径请求事件
+                    AStarEvents.PathRequestEvent?.Invoke(new PathRequestEvent(
+                        transform.position,
+                        targetPosition,
+                        foundedPath =>
+                        {
+                            if (foundedPath != null && foundedPath.Count > 0)
+                            {
+                                this.path = foundedPath;
+                                isMoving = true;
+                                UIEvent.MovingCheckerOKEvent?.Invoke(new MovingCheckerOKEvent(targetPosition));
+                                Debug.Log("Path generated. Path length: " + foundedPath.Count);
+                            }
+                            else
+                            {
+                                UIEvent.MovingCheckerNOTEvent?.Invoke(new MovingCheckerNOTEvent(targetPosition));
+                                Debug.LogWarning("No valid path generated.");
+                            }
+                        }
+                    ));
+
+                    // 如果鼠标点击，则调用 PlayerUnClickGameObject 事件
+                    PlayerEvent.PlayerUnClickGameObject?.Invoke(new PlayerUnClickGameObject(this));
+                }
+            }
+
+            playerInteractHandler.DetectInteractable();
+
+
+            GameObject[] woodObjects = GameObject.FindGameObjectsWithTag("Wood");
+
+// 遍历所有 "wood" 物体，检查是否与 player 的 Collider 发生碰撞
+            foreach (GameObject wood in woodObjects)
+            {
+                Collider2D woodCollider = wood.GetComponent<CircleCollider2D>();
+                Collider2D playerCollider = GetComponent<CircleCollider2D>();
+
+                if (woodCollider != null && playerCollider != null && playerCollider.IsTouching(woodCollider))
+                {
+                    wood.SetActive(false);
+                    UIEvent.InventoryCollectEvent?.Invoke(new InventoryCollectEvent());
+                }
+            }
+
+            GameObject DetectArea = GameObject.FindGameObjectWithTag("DetectArea");
+            detectArea = DetectArea;
+            // if (detectArea != null)
+            // {
+            //     if (GetComponent<CircleCollider2D>().IsTouching(detectArea.GetComponent<BoxCollider2D>()))
+            //     {
+            //        
+            //         DamEvent.CheckIfCanBuildEvent?.Invoke(new CheckIfCanBuildEvent());
+            //     }
+            //     
+            // }
         }
 
         private bool IsPointerOverUIElement()
@@ -75,25 +251,53 @@ namespace Core.Character
             List<RaycastResult> raycastResults = new List<RaycastResult>();
             EventSystem.current.RaycastAll(eventData, raycastResults);
 
-            Debug.Log(raycastResults.Count);
-            Debug.Log(raycastResults);
-
             return raycastResults.Count > 0;
         }
 
         private void FixedUpdate()
         {
-            if (isMoving)
+            MoveAlongPath();
+
+            if (isMoving && playerData.carriedObj == null)
             {
+                playerAnimationHandler.OnMovingAnimation();
+            }
+
+            if (!isMoving && playerData.carriedObj == null)
+            {
+                playerAnimationHandler.OnIdleAnimation();
+            }
+
+            if (isMoving && playerData.carriedObj != null)
+            {
+                playerAnimationHandler.OnMovingWithCubeAnimation();
+            }
+
+            if (!isMoving && playerData.carriedObj != null)
+            {
+                playerAnimationHandler.OnIdleWithCubeAnimation();
+            }
+        }
+
+        private void MoveAlongPath()
+        {
+            if (isMoving && path.Count > 0)
+            {
+                Node nextNode = path[0];
                 Vector2 currentPosition = rigidbody2D.position;
-                Vector2 direction = (targetPosition - currentPosition).normalized;
+                Vector2 direction = ((Vector2)nextNode.transform.position - currentPosition).normalized;
                 Vector2 newPosition = currentPosition + direction * speed * Time.fixedDeltaTime;
 
-                // 当距离足够近时停止移动
-                if (Vector2.Distance(newPosition, targetPosition) < 0.1f)
+                // 如果接近当前目标节点，则更新当前节点并移除它
+                if (Vector2.Distance(newPosition, nextNode.transform.position) < 0.1f)
                 {
-                    newPosition = targetPosition;
-                    isMoving = false;
+                    newPosition = nextNode.transform.position;
+                    path.RemoveAt(0);
+
+                    if (path.Count == 0)
+                    {
+                        isMoving = false;
+                    }
                 }
 
                 rigidbody2D.MovePosition(newPosition);
@@ -105,12 +309,43 @@ namespace Core.Character
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            // 检查进入的对象是否是 detectArea
+            if (other.gameObject == detectArea)
+            {
+                DamEvent.CheckIfCanBuildEvent?.Invoke(new CheckIfCanBuildEvent());
+                Debug.Log("Entered Detect Area");
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            // 检查离开的对象是否是 detectArea
+            if (other.gameObject == detectArea)
+            {
+                UIEvent.SetHammerRelativeComponentsEnabledEvent?.Invoke(new SetHammerRelativeComponentsEnabledEvent());
+                Debug.Log("Exited Detect Area");
+            }
+        }
 
         // 可视化交互半径
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, interactionRadius);
+        }
+
+        private void OnDestroy()
+        {
+            playerActionHandler.OnDestroy();
+            playerInputHandler.OnDestroy();
+            playerInteractHandler.OnDestroy();
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            throw new System.NotImplementedException();
         }
     }
 

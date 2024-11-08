@@ -1,39 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.Cube;
 using Core.Cube.Event;
 using Core.Cube.Handler;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CubeView : MonoBehaviour
 {
     public Rigidbody2D rigidbody2D;
-    
+
     public BoxCollider2D cubeCollider;
-    // 新的 BoxCollider2D 检测器
-    private BoxCollider2D detectionCollider;
-    
-    [SerializeField] SpriteRenderer spriteRenderer;
-    
+
+    public Scene originalScene;
+
+    [SerializeField] public CubeColor cubeColor = CubeColor.RED;
+
+    [SerializeField] public SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     public CubeMoveHandler CubeMoveHandler;
     public CubeInteractHandler CubeInteractHandler;
     public PlayerNearbyHandler PlayerNearbyHandler;
-    
+
+    // 这个变量非常重要，解决了 99 %踏板逆天行为，玩家在HeldCube时候不应该和踏板交互
+    public bool IsHeld = false;
+
     private Vector3 cubePosition;
-    private GameObject player;  // 用来存储Player的引用
+    private GameObject player; // 用来存储Player的引用
+
     public void Start()
     {
         CubeMoveHandler = new CubeMoveHandler(this);
         CubeInteractHandler = new CubeInteractHandler(this);
         PlayerNearbyHandler = new PlayerNearbyHandler(this);
-        
-        // 创建一个比 Cube 边缘大 2.0f 的 BoxCollider2D
-        detectionCollider = gameObject.AddComponent<BoxCollider2D>();
-        detectionCollider.isTrigger = true;  // 设置为触发器
-        detectionCollider.size = cubeCollider.size + new Vector2(2.0f, 2.0f);  // 比 Cube 大 2.0f
 
+        originalScene = gameObject.scene;
         // 使用GameObject.Find找到Player对象
-        player = GameObject.Find("Player");  // 假设Player的名字是 "Player"
+        player = GameObject.Find("Player"); // 假设Player的名字是 "Player"
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -45,9 +50,16 @@ public class CubeView : MonoBehaviour
             // 你可以在这里执行触发时的逻辑
         }
     }
+
     // Update is called once per frame
     void Update()
     {
+    }
 
+    private void OnDestroy()
+    {
+        CubeMoveHandler.OnDestroy();
+        CubeInteractHandler.OnDestroy();
+        PlayerNearbyHandler.OnDestroy();
     }
 }

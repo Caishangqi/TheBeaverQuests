@@ -26,7 +26,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\Assembly-CSharp\</OutputPath>
-    <DefineConstants>UNITY_2022_3_38;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2022_3_38;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169,0649</NoWarn>
@@ -45,29 +45,206 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Carlotta_Enemies\Controller_Enemy.cs" />
-    <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\ShowVictoryEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Dam\Event\CheckWoodSumTotalEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\AudioManager\AudioManagerView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\LoadingWidget\LoadWidgetView.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Cloud\CloudView.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Event\CubeEvent.cs" />
-    <Compile Include="Assets\Scripts\Core\Character\Handler\PlayerInputHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\MovingCheckerView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\InventoryCollectView.cs" />
     <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateCoveredEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Data\CheckOutPopUpWidgetQuest.cs" />
     <Compile Include="Assets\Scripts\Core\PressurePlate\PlateView.cs" />
+    <Compile Include="Assets\Scenes\Vertical Slice\ShowUpanimation.cs" />
     <Compile Include="Assets\Scripts\Core\Character\Events\PlayerMoveEvent.cs" />
-    <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateTriggeredEvent.cs" />
-    <Compile Include="Assets\Scripts\Core\Cube\Handler\CubePlayerInteraction.cs" />
-    <Compile Include="Assets\Scripts\Core\PressurePlate\Handler\PlateTriggeredHandler.cs" />
-    <Compile Include="Assets\Scripts\Carlotta_Enemies\View_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Events\PlayerLayDownCubeEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Portal\Events\PortalRequestSceneLoadEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Handler\PlayerAnimationHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\CameraManager\Handler\CameraInputHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\Handler\PostProcessHighlightHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Wood\WoodView.cs" />
+    <Compile Include="Assets\Scripts\Core\Cube\CubeColor.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\Handler\PostProcessBackgroundHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\PostProcessEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\CreditEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\Events\PlayerGridMoveEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\Bootstrap.cs" />
+    <Compile Include="Assets\Scripts\Core\AStarManager\Events\NodesMapCompletedEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\SceneEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\Events\GameObjectUnHighlightEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\PlayerSo.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\Handler\TileMapHighlightHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\InteractableView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Data\DropOffCubeQuest.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\MainMenuWidget\MainMenu\MainMenuView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\QuestManagerView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Data\MoveToLocationQuest.cs" />
     <Compile Include="Assets\Scripts\Core\PressurePlate\Handler\PlateCoveredHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\CameraManager\Handler\CameraMovementHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\CubeInteractUIView.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\EvilTree\EvilTreeEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Character\PlayerView.cs" />
-    <Compile Include="Assets\Scripts\Core\Cube\Event\CubeInteractEvent.cs" />
-    <Compile Include="Assets\Scripts\Core\Cube\CubeView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\LoadingWidget\UIAnimation.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Handler\PlayerActionHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\PostProcessView.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Spawn\SpawnPointView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Data\PickUpCubeQuest.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\PopUpWidget\PopUpWidgetView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\LoadingWidget\Handler\LoadWidgetProgressHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\MainMenuWidget\LevelSelectionBtn\LevelSelectionButtonView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\PositionMarker\Animation\FloatingEffect.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\PositionMarker\PositionMarkerEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\Handler\SceneHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\InteractButtonWidget\InteractButtonWidgetView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\InteractButtonWidget\Event\InteractButtonRequestEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\CameraManager\Events\CameraZoomInEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\ControllerModule\Manager\ControllerEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Wall\WallView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\AudioManager\AudioSo.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\ControllerModule\Controller\ControllerBase.cs" />
+    <Compile Include="Assets\Scripts\Core\Dam\Event\PlayWaterDisappearAnimEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Portal\PortalView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\Events\SceneLoadingEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\CubePickUpEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Dam\DamView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\ControllerModule\Manager\Events\RequestPlayerPossessControllerEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\EvilTree\MarkAsDeadEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Events\QuestLoadCompleteEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Handler\CubePickUpHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\PositionMarker\Animation\FloatingShadeEffect.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\GameGenericEvent.cs" />
+    <Compile Include="Assets\Scenes\Vertical Slice\ChapterEndTrigger.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Wall\WallEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Event\CubeMoveEvent.cs" />
-    <Compile Include="Assets\Scripts\Interaction\ObjectInteraction.cs" />
-    <Compile Include="Assets\Scripts\Core\Cube\Handler\CubeMoveHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\PopUpWidget\PopUpEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\UIView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\PopUpWidget\Event\PopUpWidgetClickEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\BackButtonEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\EvilTree\EvilTreeView.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Events\PlayerCarryCubeEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\ShowStoryBoardEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\TileMapManagerSo.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\AudioManager\Handler\AudioPlayHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Portal\PortalSo.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\GameCommonUtils.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\CubePlaceSelection\Events\CloseCubePlaceSelectionUIEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\SceneManagerView.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Wall\WallSo.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\ControllerModule\Controller\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\CubePlaceSelection\CubePlaceSelectionEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Character\PlayerEvent.cs" />
-    <Compile Include="Assets\Scripts\Interaction\ObjectInteractStep.cs" />
-    <Compile Include="Assets\Scripts\Carlotta_Enemies\Model_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\VictoryWidget.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\CubePlaceSelection\CubePlaceSelectionView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\ControllerModule\Manager\ControllerManagerView.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Events\PlayerUnClickGameObject.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\MovingCheckerOKEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Events\PlayerSetLocationEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\StoryBoardView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\Events\SceneRequestUnLoadEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Hand.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\MainMenuWidget\MainMenu\MainMenuHandler.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Handler\CubeInteractHandler.cs" />
-    <Compile Include="Assets\Scripts\Core\Cube\Handler\CubePressurePlatesInteract.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\CubePlaceSelection\Handler\PositionMarkerControlHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\BackToMainMenuEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\StartEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateUnTriggeredEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\PauseClickedEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Handler\QuestProcessHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\Events\ColliderEnableEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\InteractButtonWidget\Event\InteractButtonClickEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Portal\PortalEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\CameraManager\Events\CameraZoomOutEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\LayerView.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\AStarManager\AStarEvents.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\QuitEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Widget\TaskDisplayWidgetView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\PopUpWidget\Handler\PopUpWidgetInputHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Handler\PlayerInputHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\AudioManager\Handler\AudioProcessHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Portal\Handler\PortalInteractionHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\InventoryCollectEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Dam\Handler\DamHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Event\PlateTriggeredEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SnapToTileEditor.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\SelectLevelButtonEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\SetHammerRelativeComponentsEnabledEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\AStarManager\AStarManagerView.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Handler\PlayerInteractHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\AudioManager\Data\ESound.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\Events\SceneUnloadingEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\Handler\PostProcessForegroundHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Events\QuestStartEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\PressCubeInteractWidgetEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Events\QuestTerminateEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\MovingCheckerNOTEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\TileMapManagerEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\PositionMarker\Events\PositionMarkerClickEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\PressurePlate\Handler\PlateTriggeredHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\LoadingWidget\LoadWidgetEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\SceneMeta\SceneMetaView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\CubePlaceSelection\Events\RequestCubePlaceSelectionUIEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\ControllerModule\Manager\Events\RequestPlayerUnpossessControllerEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\AStarManager\Node.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\ShowHammerButtonEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Handler\QuestLoadHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\Events\ColliderDisableEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\PopUpWidget\Event\PopUpWidgetReachLastPageEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\CubePlaceSelection\Events\HandleCubePlaceSelectionUIEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Events\QuestCompleteEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Handler\MovingCheckerHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\CubePlaceSelection\Events\DisplayCubePlaceSelectionUIEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\ResumeClickedEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\InteractButtonWidget\Event\InteractButtonUnRequestEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\Events\SceneLoadCompleteEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\Events\SceneRequestLoadEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Handler\PlayerCollectHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\InteractButtonWidget\InteractButtonEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\AStarManager\Events\PathRequestEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Data\Quest.cs" />
+    <Compile Include="Assets\Scripts\Core\Cube\Event\CubeInteractEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Handler\PauseAndResumeHandler.cs" />
+    <Compile Include="Assets\Scenes\Vertical Slice\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Core\Cube\Event\PlayerNearbyEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\SceneSo.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\Events\SceneUnLoadCompleteEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\PopUpWidget\Event\PopUpWidgetGoNextPageEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\GamePauseAndResumeView.cs" />
+    <Compile Include="Assets\Scripts\Miscellaneous\Visual\HighlighterComponent.cs" />
+    <Compile Include="Assets\Scripts\Core\Cube\CubeView.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\SceneManager\Events\SceneRequestTransferEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Cube\Handler\PlayerNearbyHandler.cs" />
+    <Compile Include="Assets\Scenes\Vertical Slice\SimpleEndScene.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Events\PlayerCarryWoodEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\CameraManager\Events\CameraZoomEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Cube\Handler\CubeMoveHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\TutorialCanvas.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\CameraManager\CameraView.cs" />
+    <Compile Include="Assets\Scripts\Core\Dam\Event\DamEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Events\PlayerSelectInteractEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Events\PlayerDeselectInteractEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\UIEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\InteractButtonWidget\Handler\InteractButtonControlHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\PostProcessDataSo.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\AudioManager\AudioEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Dam\Event\CheckIfCanBuildEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Character\Events\PlayerCarryCubeAnimeEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\Data\PickUpWoodQuest.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\PostProcessManager\Events\GameObjectHighlightEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\QuestManager\QuestManagerEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\Interfaces\AllInteractable.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\CameraManager\CameraEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\ConstructionButtonView.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\Wall\Handler\WallInteractionHandler.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\PositionMarker\PositionMarkerView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\MainMenuWidget\LevelSelectionBtn\LevelSelectionButtonEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Dam\Event\PlayDamConstructionAnimEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\TileMapManager\TileMapManagerView.cs" />
+    <Compile Include="Assets\Scripts\Core\Entity\DetectAreaForConstructionDam\DetectAreaView.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\SettingEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\AudioManager\Events\PlaySoundEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\UI\Event\GeneratedButtonClickedEvent.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -80,6 +257,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Scripts\Core\Shade\SpriteOutline.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
@@ -116,12 +294,6 @@
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ContentLoadModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.ContentLoadModule.dll</HintPath>
@@ -281,9 +453,6 @@
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VirtualTexturingModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WindModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
@@ -723,26 +892,89 @@
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="PsdPlugin">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    <Reference Include="Unity.2D.Common.Path.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Aseprite.Common">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Runtime">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Aseprite.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PsdPlugin">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Path.Editor">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
+    <Reference Include="Unity.Burst">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -762,20 +994,8 @@
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Aseprite.Common">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
@@ -783,17 +1003,11 @@
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -801,23 +1015,14 @@
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Collections">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
@@ -825,14 +1030,14 @@
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Aseprite.Editor">
-      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>C:\p4\TGP1\Team13\Unity\Team13\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>

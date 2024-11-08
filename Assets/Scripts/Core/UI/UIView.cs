@@ -1,6 +1,5 @@
 ﻿using System;
 using Core.UI.Event;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 namespace Core.UI

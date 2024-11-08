@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - PuzzleCube
+  - Cube
+  - Collision
+  - Wood
+  - Water
+  - DetectArea
+  - AStarNode
   layers:
   - Default
   - TransparentFX
@@ -45,6 +51,21 @@ TagManager:
   - name: Background
     uniqueID: 1367126205
     locked: 0
+  - name: Middleground
+    uniqueID: 1623122473
+    locked: 0
+  - name: Player
+    uniqueID: 1930838711
+    locked: 0
   - name: Forground
     uniqueID: 3798167535
+    locked: 0
+  - name: Effect
+    uniqueID: 3209170159
+    locked: 0
+  - name: PopUpUI
+    uniqueID: 992527051
+    locked: 0
+  - name: UI
+    uniqueID: 1544937367
     locked: 0
