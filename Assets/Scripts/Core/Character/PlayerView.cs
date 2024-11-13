@@ -3,6 +3,9 @@ using Core.AStarManager;
 using Core.AStarManager.Events;
 using Core.Character.Events;
 using Core.Character.Handler;
+using Core.Game.AudioManager;
+using Core.Game.AudioManager.Data;
+using Core.Game.ControllerModule.Gesture;
 using Core.Game.SceneManager;
 using Core.Game.SceneManager.Events;
 using Core.Game.TileMapManager.CubePlaceSelection;
@@ -34,6 +37,7 @@ namespace Core.Character
 
         #region Variables
 
+        private AudioManagerView audioManagerView { get; set; }
         private List<Node> path = new List<Node>();
         public Vector2 targetPosition;
         public bool isMoving;
@@ -43,6 +47,9 @@ namespace Core.Character
         private float lastTapTime = 0f;
         private int tapCount = 0;
         private GameObject detectArea;
+        private bool isSingleFingerActionBlocked = false;
+        private float singleFingerBlockTimer = 0f;
+        private float blockDuration = 0.2f;
 
         #endregion
 
@@ -56,6 +63,8 @@ namespace Core.Character
         [SerializeField] public CircleCollider2D playerCollider;
 
         [SerializeField] public GameObject hand; //手部
+
+        [SerializeField] public AudioSource audioStepSource;
 
         #endregion
 
@@ -72,6 +81,15 @@ namespace Core.Character
             //playerCollectHandler = new PlayerCollectHandler(this);
             SceneEvent.SceneUnLoadCompleteEvent += OnSceneUnLoadCompleteEvent;
             SceneEvent.SceneLoadCompleteEvent += OnSceneLoadCompleteEvent;
+
+            // Audio Manager
+            audioStepSource = gameObject.AddComponent<AudioSource>();
+            audioManagerView = FindObjectOfType<AudioManagerView>();
+            if (!audioManagerView)
+            {
+                Debug.LogException(
+                    new MissingComponentException("AudioManagerView not found, please add one in the scene."));
+            }
 
             playerData = new PlayerSo();
             targetPosition = transform.position;
@@ -101,9 +119,38 @@ namespace Core.Character
                 playerActionHandler.RequestCubePlaceSelectionUI();
             }
 
-            // 检测触摸或鼠标输入
-            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+            if (singleFingerBlockTimer > 0)
             {
+                singleFingerBlockTimer -= Time.deltaTime;
+                isSingleFingerActionBlocked = true;
+            }
+            else
+            {
+                isSingleFingerActionBlocked = false;
+            }
+
+            // 检查双指操作状态
+            if (GestureManager.Instance.IsTwoFingerGestureActive)
+            {
+                Debug.Log("Has banned 1 finger moving");
+                isSingleFingerActionBlocked = true;  // 阻止单指操作
+                singleFingerBlockTimer = blockDuration; // 设置延迟计时器
+                return;
+            }
+
+            if (isSingleFingerActionBlocked)
+            {
+                isSingleFingerActionBlocked = false;  // 每帧重置状态
+                return; // 阻止本帧的单指输入
+            }
+
+    
+            // 检测触摸或鼠标输入
+            if (Input.touchCount == 1 )//|| Input.GetMouseButtonDown(0))
+            {
+            // // 检测触摸或鼠标输入
+            // if (Input.touchCount == 1 || Input.GetMouseButtonDown(0))
+            // {
                 // 判断是否是在 UI 上
                 if (EventSystem.current != null)
                 {
@@ -212,34 +259,6 @@ namespace Core.Character
             }
 
             playerInteractHandler.DetectInteractable();
-
-
-            GameObject[] woodObjects = GameObject.FindGameObjectsWithTag("Wood");
-
-// 遍历所有 "wood" 物体，检查是否与 player 的 Collider 发生碰撞
-            foreach (GameObject wood in woodObjects)
-            {
-                Collider2D woodCollider = wood.GetComponent<CircleCollider2D>();
-                Collider2D playerCollider = GetComponent<CircleCollider2D>();
-
-                if (woodCollider != null && playerCollider != null && playerCollider.IsTouching(woodCollider))
-                {
-                    wood.SetActive(false);
-                    UIEvent.InventoryCollectEvent?.Invoke(new InventoryCollectEvent());
-                }
-            }
-
-            GameObject DetectArea = GameObject.FindGameObjectWithTag("DetectArea");
-            detectArea = DetectArea;
-            // if (detectArea != null)
-            // {
-            //     if (GetComponent<CircleCollider2D>().IsTouching(detectArea.GetComponent<BoxCollider2D>()))
-            //     {
-            //        
-            //         DamEvent.CheckIfCanBuildEvent?.Invoke(new CheckIfCanBuildEvent());
-            //     }
-            //     
-            // }
         }
 
         private bool IsPointerOverUIElement()
@@ -305,6 +324,10 @@ namespace Core.Character
                 if (rigidbody2D.velocity.magnitude > 0.1f || isMoving)
                 {
                     PlayerEvent.PlayerMoveEvent?.Invoke(new PlayerMoveEvent(newPosition, this));
+                    if (!audioStepSource.isPlaying)
+                    {
+                        PlayFootstepSound();
+                    }
                 }
             }
         }
@@ -346,6 +369,13 @@ namespace Core.Character
         public void OnPointerClick(PointerEventData eventData)
         {
             throw new System.NotImplementedException();
+        }
+
+        private void PlayFootstepSound()
+        {
+            AudioClip clip = audioManagerView.getAudioData(ESound.ENTITY_PLAYER_WALK).audioClip;
+            audioStepSource.clip = clip;
+            audioStepSource.Play();
         }
     }
 

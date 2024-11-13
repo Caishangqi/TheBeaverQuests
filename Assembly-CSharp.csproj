@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\Core\Entity\Wall\WallEvent.cs" />
     <Compile Include="Assets\Scripts\Core\Cube\Event\CubeMoveEvent.cs" />
     <Compile Include="Assets\Scripts\Core\UI\PopUpWidget\PopUpEvent.cs" />
+    <Compile Include="Assets\Scripts\Core\Game\ControllerModule\Gesture\GestureManager.cs" />
     <Compile Include="Assets\Scripts\Core\UI\UIView.cs" />
     <Compile Include="Assets\Scripts\Core\UI\PopUpWidget\Event\PopUpWidgetClickEvent.cs" />
     <Compile Include="Assets\Scripts\Core\UI\Event\BackButtonEvent.cs" />

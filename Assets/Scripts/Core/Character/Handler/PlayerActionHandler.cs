@@ -1,5 +1,8 @@
 using Core.Character.Events;
 using Core.Game;
+using Core.Game.AudioManager;
+using Core.Game.AudioManager.Data;
+using Core.Game.AudioManager.Events;
 using Core.Game.Events;
 using Core.Game.PostProcessManager;
 using Core.Game.PostProcessManager.Events;
@@ -68,6 +71,7 @@ namespace Core.Character.Handler
             PostProcessEvent.GameObjectUnHighlightEvent?.Invoke(new GameObjectUnHighlightEvent(carriedCube.gameObject));
             // broadcast the cube collider enable event (Update the NavMesh)
             GameGenericEvent.ColliderEnableEvent.Invoke(new ColliderEnableEvent(carriedCube.gameObject));
+            AudioEvent.PlaySoundEvent?.Invoke(new PlaySoundEvent(playerView.gameObject,ESound.ENTITY_PLAYER_DROP_CUBE));
             playerView.playerData.carriedObj = null;
         }
 

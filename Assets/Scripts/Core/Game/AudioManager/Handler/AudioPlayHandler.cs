@@ -34,7 +34,5 @@ namespace Core.Game.AudioManager.Handler
                 view.audioSource.PlayOneShot(view.audioSo.soundList[playSoundEvent.ESound].audioClip);
             }
         }
-
-        
     }
 }

@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using Core.Game.ControllerModule.Gesture;
+using Unity.VisualScripting;
 using UnityEngine;
 using Unity.Collections;
 using Vector2 = System.Numerics.Vector2;
@@ -28,6 +29,8 @@ namespace Core.Game.CameraManager.Handler
         {
             if (Input.touchCount == 2)
             {
+                GestureManager.Instance.IsTwoFingerGestureActive = true;
+                
                 Touch touch1 = Input.GetTouch(0);
                 Touch touch2 = Input.GetTouch(1);
 
@@ -42,30 +45,44 @@ namespace Core.Game.CameraManager.Handler
                 // 当手势移动时处理缩放和拖动
                 if (touch1.phase == TouchPhase.Moved && touch2.phase == TouchPhase.Moved)
                 {
-                    // HandlePinchZoom(touch1, touch2);
-                    // HandleDrag(touch1, touch2);
-                    UnityEngine.Vector2 currentTouchDistance = touch1.position - touch2.position;
-                    float distanceChange = Mathf.Abs(currentTouchDistance.magnitude - previousTouchDistance.magnitude);
-
-                    // 根据距离变化来判断是缩放还是拖动
-                    if (distanceChange > distanceThreshold)
-                    {
-                        HandlePinchZoom(touch1, touch2); // 如果距离变化大于阈值，则执行缩放
-                    }
-                    else
-                    {
-                        HandleDrag(touch1, touch2); // 否则执行拖动
-                    }
-
-                    previousTouchDistance = currentTouchDistance; // 更新距离
+                    HandlePinchZoom(touch1, touch2);
+                    HandleDrag(touch1, touch2);
+                    // UnityEngine.Vector2 currentTouchDistance = touch1.position - touch2.position;
+                    // float distanceChange = Mathf.Abs(currentTouchDistance.magnitude - previousTouchDistance.magnitude);
+                    //
+                    // // 根据距离变化来判断是缩放还是拖动
+                    // if (distanceChange > distanceThreshold)
+                    // {
+                    //     HandlePinchZoom(touch1, touch2); // 如果距离变化大于阈值，则执行缩放
+                    // }
+                    // else
+                    // {
+                    //     HandleDrag(touch1, touch2); // 否则执行拖动
+                    // }
+                    //
+                    // previousTouchDistance = currentTouchDistance; // 更新距离
+                    
+                    Debug.Log("Has banned 1 finger moving");
                 }
             }
+            else //处理gestures
+            {
+                GestureManager.Instance.IsTwoFingerGestureActive = false; // 解除双指操作
+            }
+            
             // 处理鼠标左键和右键同时按下
-            else if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+            if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
             {
                 HandleMouseDrag();
+                GestureManager.Instance.IsTwoFingerGestureActive = true;
+                Debug.Log("Has banned 1 finger moving");
             }
-            else if (!isReturningToInitialPosition)
+            else //处理gestures
+            {
+                GestureManager.Instance.IsTwoFingerGestureActive = false; // 解除双指操作
+            }
+            
+            if (!isReturningToInitialPosition)
             {
                 isReturningToInitialPosition = true;
                 cameraView.StartCoroutine(cameraView.ResetZoomAfterDelay(2f));

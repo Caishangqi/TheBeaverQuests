@@ -122,11 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &61643476 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-  m_PrefabInstance: {fileID: 1523036525}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &158505650 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 937865318893108726, guid: 93417bf84c026bb46841fa0c1d0c3817, type: 3}
@@ -386,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionTilemaps: []
-  nodePrefab: {fileID: 8491682140966481310, guid: f6c9c1acccd654d449ef86a1c7415c73, type: 3}
+  nodePrefab: {fileID: 6927241844089807839, guid: 709954c92066f4d4db5d01bc3c11ff3e, type: 3}
   nodeList: []
   maxBounds:
     m_Position: {x: 0, y: 0, z: 0}
@@ -447,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60b227138efa3c46b824e29f1092422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Level3
+  targetScene: Level 3
   levelSelectionBtn: {fileID: 518170311}
   levelSelectionBtnImage: {fileID: 518170312}
 --- !u!1001 &633422844
@@ -513,6 +508,14 @@ PrefabInstance:
     - target: {fileID: 8852686105433875912, guid: be54d4b48235ce4409927d2289457da5, type: 3}
       propertyPath: boundsOffset
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852686105433875912, guid: be54d4b48235ce4409927d2289457da5, type: 3}
+      propertyPath: zoomLerpSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852686105433875912, guid: be54d4b48235ce4409927d2289457da5, type: 3}
+      propertyPath: zoomRestoreDelay
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -692,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60b227138efa3c46b824e29f1092422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Alpha Level 4
+  targetScene: Level 4
   levelSelectionBtn: {fileID: 1113221859}
   levelSelectionBtnImage: {fileID: 1113221860}
 --- !u!1001 &1203207991
@@ -812,7 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60b227138efa3c46b824e29f1092422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Alpha Level 5
+  targetScene: Level 5
   levelSelectionBtn: {fileID: 1337739031}
   levelSelectionBtnImage: {fileID: 1337739032}
 --- !u!1001 &1407063542
@@ -1094,63 +1097,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1523036525
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1837247583222971281}
-    m_Modifications:
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8262065120335601522, guid: 577009aa1dee2534c885fd198354a011, type: 3}
-      propertyPath: m_Name
-      value: VictoryWidget
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 577009aa1dee2534c885fd198354a011, type: 3}
 --- !u!1 &1558533015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2874431370926194327, guid: 7d3a860c6feb098478249277753779c7, type: 3}
@@ -1190,7 +1136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60b227138efa3c46b824e29f1092422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Level2_
+  targetScene: Level 2
   levelSelectionBtn: {fileID: 1558533016}
   levelSelectionBtnImage: {fileID: 1558533017}
 --- !u!4 &1618838316 stripped
@@ -1206,6 +1152,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 937865318893108726, guid: 93417bf84c026bb46841fa0c1d0c3817, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2458626308945186344, guid: 93417bf84c026bb46841fa0c1d0c3817, type: 3}
       propertyPath: m_Size.x
       value: 1.0013038
@@ -1473,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60b227138efa3c46b824e29f1092422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Alpha Level 1
+  targetScene: Level 1
   levelSelectionBtn: {fileID: 1900817387}
   levelSelectionBtnImage: {fileID: 1900817388}
 --- !u!4 &1972816977 stripped
@@ -1576,6 +1526,68 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3103395284295876260, guid: 0393576495e2f3a479689e1dc7489d60, type: 3}
   m_PrefabInstance: {fileID: 8620076860159311806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2147328762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1837247583222971281}
+    m_Modifications:
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262065120335601522, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+      propertyPath: m_Name
+      value: VictoryWidget
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+--- !u!4 &2147328763 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6385878111371552447, guid: 577009aa1dee2534c885fd198354a011, type: 3}
+  m_PrefabInstance: {fileID: 2147328762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &413540512230862179 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5469154313669718482, guid: 0393576495e2f3a479689e1dc7489d60, type: 3}
@@ -1668,7 +1680,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 61643476}
+  - {fileID: 2147328763}
   - {fileID: 1203207992}
   - {fileID: 1972816977}
   - {fileID: 1796441760}
