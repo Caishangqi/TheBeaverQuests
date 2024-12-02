@@ -33,10 +33,8 @@ namespace Core.Game.SettingManager.Widget
         {
             if (settingManager)
             {
-                settingManager.settingsData.masterVolume = volume;
                 masterVolumePercentage.text = string.Format("{0:0}%", volume * 100);
-                float dB = Mathf.Lerp(-80f, 20f, volume); // 将0-1范围映射到-80dB到20dB
-                settingManager.audioMixer.SetFloat("MasterVolume", dB);
+                settingManager.settingPropertyHandler.UpdateMasterVolume(volume);
             }
         }
 
@@ -44,10 +42,8 @@ namespace Core.Game.SettingManager.Widget
         {
             if (settingManager)
             {
-                settingManager.settingsData.sfxVolume = volume;
                 sfxVolumePercentage.text = string.Format("{0:0}%", volume * 100);
-                float dB = Mathf.Lerp(-80f, 20f, volume);
-                settingManager.audioMixer.SetFloat("SFXVolume", dB);
+                settingManager.settingPropertyHandler.UpdateSfxVolume(volume);
             }
         }
 
@@ -55,10 +51,8 @@ namespace Core.Game.SettingManager.Widget
         {
             if (settingManager)
             {
-                settingManager.settingsData.musicVolume = volume;
                 musicVolumePercentage.text = string.Format("{0:0}%", volume * 100);
-                float dB = Mathf.Lerp(-80f, 20f, volume);
-                settingManager.audioMixer.SetFloat("MusicVolume", dB);
+                settingManager.settingPropertyHandler.UpdateMusicVolume(volume);
             }
         }
 
@@ -86,9 +80,6 @@ namespace Core.Game.SettingManager.Widget
         void Start()
         {
             settingManager = SettingManager.instance;
-            SetMasterVolume(settingManager.settingsData.masterVolume);
-            SetSfxVolume(settingManager.settingsData.sfxVolume);
-            SetMusicVolume(settingManager.settingsData.musicVolume);
             UpdateScrollbar();
         }
     }

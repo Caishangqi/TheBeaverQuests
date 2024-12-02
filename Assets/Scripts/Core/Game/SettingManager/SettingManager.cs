@@ -1,5 +1,6 @@
 using Core.Game.SettingManager.Data;
 using Core.Game.SettingManager.Events;
+using Core.Game.SettingManager.Handler;
 using Core.Game.SettingManager.Widget;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -19,6 +20,8 @@ namespace Core.Game.SettingManager
         #endregion
 
         #region Handler
+
+        public SettingPropertyHandler settingPropertyHandler { get; private set; }
 
         #endregion
 
@@ -50,6 +53,7 @@ namespace Core.Game.SettingManager
         /// </summary>
         private void Awake()
         {
+            settingPropertyHandler = new SettingPropertyHandler(this);
             if (instance == null)
             {
                 instance = this;
@@ -64,6 +68,7 @@ namespace Core.Game.SettingManager
         private void Start()
         {
             SettingManagerEvent.RequestSettingWidgetEvent += OnRequestSettingWidgetEvent;
+            settingPropertyHandler.LoadSettingProperties();
         }
 
         private void OnRequestSettingWidgetEvent(RequestSettingWidgetEvent requestSettingWidgetEvent)
