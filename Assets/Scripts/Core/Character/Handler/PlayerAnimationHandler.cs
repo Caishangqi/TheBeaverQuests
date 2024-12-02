@@ -1,4 +1,6 @@
 ﻿using Core.Character.Events;
+using Core.Game.SceneManager;
+using Core.Game.SceneManager.Events;
 using Core.UI.InteractButtonWidget;
 using Core.UI.InteractButtonWidget.Event;
 using Unity.VisualScripting;
@@ -24,13 +26,31 @@ namespace Core.Character.Handler
             PlayerEvent.PlayerCarryCubeAnimeEvent += OnPlayerCarryCubeAnimeEvent;
             //InteractButtonEvent.InteractButtonClickEvent += OnInteractButtonClickEvent;
             PlayerEvent.PlayerLayDownEvent += OnPlayerLayDownEvent;
+            SceneEvent.SceneUnLoadCompleteEvent += OnSceneUnloadCompleteEvent;
             //PlayerEvent.Player
             
             // 获取手部的Animator（假设手部是Player的子对象）
             handAnimator = playerView.hand.GetComponent<Animator>();
             Transform handTransform = playerView.hand.transform;  // 需要在PlayerView中定义手部Transform
         }
-        
+
+        private void OnSceneUnloadCompleteEvent(SceneUnLoadCompleteEvent obj)
+        {
+            PlayerView.animator.SetBool("IsWalking", false);
+            PlayerView.animator.SetBool("IsCarryingAndMoving",false);
+            PlayerView.animator.SetBool("IsCarryingAndIdle",false);
+            PlayerView.animator.SetBool("IsInIdle", true);
+            PlayerView.animator.ResetTrigger("NeedsToPutDown");
+            PlayerView.animator.ResetTrigger("NeedsToCarryFromLeft");
+            PlayerView.animator.ResetTrigger("NeedsToCarryFromRight");
+            PlayerView.animator.ResetTrigger("NeedsToCarryFromTop");
+            
+            hand = PlayerView.hand;
+            handAnimator = hand.GetComponent<Animator>();
+            handAnimator.SetBool("HasCarried", false);
+            handAnimator.ResetTrigger("NeedsToCarry");
+        }
+
         private void OnPlayerLayDownEvent(PlayerLayDownCubeEvent obj)
         {
             if (PlayerView.transform.localScale.x < 0.0f)
@@ -44,7 +64,6 @@ namespace Core.Character.Handler
             PlayerView.animator.SetBool("IsInIdle", true);
             
             PlayerView.animator.SetTrigger("NeedsToPutDown");
-            
         }
 
         private void OnPlayerCarryCubeAnimeEvent(PlayerCarryCubeAnimeEvent obj)

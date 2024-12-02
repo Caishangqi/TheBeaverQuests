@@ -6,6 +6,8 @@ using Core.Game.AudioManager.Events;
 using Core.Game.Events;
 using Core.Game.PostProcessManager;
 using Core.Game.PostProcessManager.Events;
+using Core.Game.SceneManager;
+using Core.Game.SceneManager.Events;
 using Core.Game.TileMapManager.CubePlaceSelection;
 using Core.Game.TileMapManager.CubePlaceSelection.Events;
 using Core.Game.TileMapManager.PositionMarker;
@@ -31,6 +33,8 @@ namespace Core.Character.Handler
             InteractButtonEvent.InteractButtonClickEvent += OnInteractButtonClickEvent;
         }
 
+
+
         public void RequestCubePlaceSelectionUI()
         {
             CubePlaceSelectionEvent.RequestCubePlaceSelectionUIEvent.Invoke(
@@ -47,7 +51,7 @@ namespace Core.Character.Handler
                     interactButtonClickEvent.view.targetGameObject));
             }
         }
-        
+
         // 当玩家触碰可选方块位置后触发的事件
         private void OnPositionMarkerClickEvent(PositionMarkerClickEvent positionMarkerClickEvent)
         {
@@ -71,7 +75,8 @@ namespace Core.Character.Handler
             PostProcessEvent.GameObjectUnHighlightEvent?.Invoke(new GameObjectUnHighlightEvent(carriedCube.gameObject));
             // broadcast the cube collider enable event (Update the NavMesh)
             GameGenericEvent.ColliderEnableEvent.Invoke(new ColliderEnableEvent(carriedCube.gameObject));
-            AudioEvent.PlaySoundEvent?.Invoke(new PlaySoundEvent(playerView.gameObject,ESound.ENTITY_PLAYER_DROP_CUBE));
+            AudioEvent.PlaySoundEvent?.Invoke(new PlaySoundEvent(playerView.gameObject,
+                ESound.ENTITY_PLAYER_DROP_CUBE));
             playerView.playerData.carriedObj = null;
         }
 

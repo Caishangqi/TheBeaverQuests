@@ -78,9 +78,7 @@ namespace Core.Character
             playerActionHandler = new PlayerActionHandler(this);
             playerInteractHandler = new PlayerInteractHandler(this);
             playerAnimationHandler = new PlayerAnimationHandler(this);
-            //playerCollectHandler = new PlayerCollectHandler(this);
             SceneEvent.SceneUnLoadCompleteEvent += OnSceneUnLoadCompleteEvent;
-            SceneEvent.SceneLoadCompleteEvent += OnSceneLoadCompleteEvent;
 
             // Audio Manager
             audioStepSource = gameObject.AddComponent<AudioSource>();
@@ -98,17 +96,22 @@ namespace Core.Character
             //gameObject.SetActive(false);
         }
 
-        private void OnSceneLoadCompleteEvent(SceneLoadCompleteEvent sceneLoadCompleteEvent)
-        {
-            //gameObject.SetActive(true);
-        }
-
+        /// <summary>
+        /// Handle logic when the scene is prepare for unloading, handle
+        /// cube when player carried cube
+        /// </summary>
+        /// <param name="sceneUnLoadCompleteEvent"></param>
         private void OnSceneUnLoadCompleteEvent(SceneUnLoadCompleteEvent sceneUnLoadCompleteEvent)
         {
-            // Destroy player hand cube object
-            Destroy(playerData.carriedObj);
-            //gameObject.SetActive(false);
+            CubeView carriedCube = playerData.carriedObj;
+            if (carriedCube != null)
+            {
+                carriedCube.IsHeld = false;
+                Destroy(carriedCube.gameObject);
+                playerData.carriedObj = null;
+            }
         }
+
 
         // Update is called once per frame
         private void Update()
@@ -133,24 +136,24 @@ namespace Core.Character
             if (GestureManager.Instance.IsTwoFingerGestureActive)
             {
                 Debug.Log("Has banned 1 finger moving");
-                isSingleFingerActionBlocked = true;  // 阻止单指操作
+                isSingleFingerActionBlocked = true; // 阻止单指操作
                 singleFingerBlockTimer = blockDuration; // 设置延迟计时器
                 return;
             }
 
             if (isSingleFingerActionBlocked)
             {
-                isSingleFingerActionBlocked = false;  // 每帧重置状态
+                isSingleFingerActionBlocked = false; // 每帧重置状态
                 return; // 阻止本帧的单指输入
             }
 
-    
+
             // 检测触摸或鼠标输入
-            if (Input.touchCount == 1 )//|| Input.GetMouseButtonDown(0))
+            if (Input.touchCount == 1 | Input.GetMouseButtonDown(0))
             {
-            // // 检测触摸或鼠标输入
-            // if (Input.touchCount == 1 || Input.GetMouseButtonDown(0))
-            // {
+                // // 检测触摸或鼠标输入
+                // if (Input.touchCount == 1 || Input.GetMouseButtonDown(0))
+                // {
                 // 判断是否是在 UI 上
                 if (EventSystem.current != null)
                 {
@@ -364,6 +367,7 @@ namespace Core.Character
             playerActionHandler.OnDestroy();
             playerInputHandler.OnDestroy();
             playerInteractHandler.OnDestroy();
+            SceneEvent.SceneUnLoadCompleteEvent -= OnSceneUnLoadCompleteEvent;
         }
 
         public void OnPointerClick(PointerEventData eventData)
