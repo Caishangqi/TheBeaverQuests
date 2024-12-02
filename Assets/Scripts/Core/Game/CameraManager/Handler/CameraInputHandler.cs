@@ -1,4 +1,5 @@
-﻿using Core.Game.ControllerModule.Gesture;
+﻿using System.Collections;
+using Core.Game.ControllerModule.Gesture;
 using Unity.VisualScripting;
 using UnityEngine;
 using Unity.Collections;
@@ -22,8 +23,15 @@ namespace Core.Game.CameraManager.Handler
         {
             this.cameraView = cameraView;
             initialPosition = cameraView.mainCamera.transform.position; // 初始化摄像机位置
+
+            //DamEvent.PlayWaterDisappearAnimEvent += OnPlayerWaterDisappearAnimEvent;
         }
-        
+
+        // private void OnPlayerWaterDisappearAnimEvent(PlayWaterDisappearAnimEvent obj)
+        // {
+        //     cameraView.StartCoroutine(ZoomToSize(cameraView.maxZoom, 6f)); 
+        // }
+
         // 检查和处理双指手势的主方法
         public void HandleTouchInput()
         {
@@ -85,7 +93,7 @@ namespace Core.Game.CameraManager.Handler
             if (!isReturningToInitialPosition)
             {
                 isReturningToInitialPosition = true;
-                cameraView.StartCoroutine(cameraView.ResetZoomAfterDelay(2f));
+                cameraView.StartCoroutine(cameraView.ResetZoomAfterDelay(cameraView.zoomRestoreDelay));
             }
         }
 
@@ -186,6 +194,23 @@ namespace Core.Game.CameraManager.Handler
             cameraPosition.x = Mathf.Clamp(cameraPosition.x, cameraView.mapBounds.min.x - cameraView.boundsOffset, cameraView.mapBounds.max.x + cameraView.boundsOffset);
             cameraPosition.y = Mathf.Clamp(cameraPosition.y, cameraView.mapBounds.min.y - cameraView.boundsOffset, cameraView.mapBounds.max.y + cameraView.boundsOffset);
             cameraView.mainCamera.transform.position = cameraPosition;
+        }
+        
+        private IEnumerator ZoomToSize(float targetSize, float duration)
+        {
+            float initialSize = cameraView.mainCamera.orthographicSize;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < duration)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / duration; // 计算进度
+                cameraView.mainCamera.orthographicSize = Mathf.Lerp(initialSize, targetSize, t);
+                yield return null; // 等待下一帧
+            }
+
+            // 确保最终缩放到目标大小
+            cameraView.mainCamera.orthographicSize = targetSize;
         }
 
     }
